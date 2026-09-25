@@ -29,22 +29,15 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="site-bg" aria-hidden="true"></div>
+    <div class="cosmic-bg" aria-hidden="true"></div>
     <nav>
       <div class="container nav-bar">
         <a href="index.html" class="logo"><img src="logo.png" alt="Meraxis Labs" /></a>
-        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
-          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
-            <path fill="currentColor" d="M2 4h14v1.5H2zm0 4.25h14v1.5H2zm0 4.25h14V14H2z" />
-          </svg>
-        </button>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
         <div class="nav-links">
           <a href="experiments.html">Experiments</a>
           <a href="about.html">About</a>
@@ -55,33 +48,27 @@
 
     <header class="hero">
       <div class="container">
-        <div class="hero-shell">
-          <div>
-            <h1 class="brand-title reveal">
-              Meraxis <span class="brand-accent">Labs</span>
-            </h1>
-            <p class="hero-line reveal reveal-delay">Experiment. Validate. Build.</p>
-            <p class="lede reveal reveal-delay-2">
-              An independent startup experimentation lab. TagBack is live. The other six experiments are still planned.
-            </p>
-            <div class="cta-row reveal reveal-delay-2">
-              <a class="btn btn-primary" href="experiments.html">View experiments →</a>
-              <a class="btn btn-ghost" href="contact.html">Get in touch</a>
-            </div>
-          </div>
+        <p class="kicker">Meraxis Labs</p>
+        <h1>
+          <span class="line">Experiment.</span>
+          <span class="line">Validate.</span>
+          <span class="line">Build.</span>
+        </h1>
+        <p class="lede">
+          An independent startup experimentation lab. TagBack is live. The other six experiments are still planned.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="experiments.html">View experiments →</a>
+          <a class="btn btn-ghost" href="contact.html">Get in touch</a>
         </div>
-      </div>
-      <div class="hero-visual reveal reveal-delay-2">
-        <img
-          src="media/tagback-hero.png"
-          alt="TagBack — QR lost and found product"
-          width="1280"
-          height="720"
-        />
+        <div class="stats">
+          <div class="stat"><strong>7</strong><span>Experiments</span></div>
+          <div class="stat"><strong>1</strong><span>Live product</span></div>
+        </div>
       </div>
     </header>
 
-    <section class="section section-compact">
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <div>
@@ -89,36 +76,26 @@
             <h2>Live product</h2>
           </div>
         </div>
-        <article class="feature-live">
-          <div class="feature-live-copy">
-            <div class="meta"><span class="pill live">Live</span></div>
-            <h3>
-              <a href="https://tagback.getmeraxis.com/" target="_blank" rel="noopener noreferrer">TagBack</a>
-            </h3>
-            <p class="experiment-lead">QR lost &amp; found, privately.</p>
-            <p>
-              Turn any item into a smart, private “return to owner” tag so honest finders can reach you—without ever
-              revealing your personal contact details.
-            </p>
-            <div class="cta-row">
-              <a
-                class="btn btn-primary"
-                href="https://tagback.getmeraxis.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Open TagBack →</a
-              >
+        <div class="list">
+          <article class="card experiment">
+            <img class="experiment-icon" src="icons/tagback.svg" alt="" width="48" height="48" />
+            <div>
+              <div class="meta"><span class="pill live">Live</span></div>
+              <h3>
+                <a href="https://tagback.getmeraxis.com/" target="_blank" rel="noopener noreferrer">TagBack</a>
+              </h3>
+              <p class="experiment-lead">QR lost &amp; found, privately.</p>
+              <p>
+                Turn any item into a smart, private “return to owner” tag so honest finders can reach you—without ever
+                revealing your personal contact details.
+              </p>
             </div>
-          </div>
-        </article>
-        <div class="stats">
-          <div class="stat"><strong>7</strong><span>Experiments</span></div>
-          <div class="stat"><strong>1</strong><span>Live product</span></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="padding-top: 0">
       <div class="container">
         <div class="section-head">
           <div>
@@ -127,8 +104,8 @@
           </div>
           <a class="more" href="experiments.html">All experiments →</a>
         </div>
-        <div class="board-list">
-          <article class="board-item">
+        <div class="list">
+          <article class="card experiment">
             <img class="experiment-icon" src="icons/rewards.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -136,7 +113,7 @@
               <p>A rewards programme built around credit card spend.</p>
             </div>
           </article>
-          <article class="board-item">
+          <article class="card experiment">
             <img class="experiment-icon" src="icons/otp.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -144,12 +121,39 @@
               <p>A gateway for sending and verifying one-time passwords over SMS.</p>
             </div>
           </article>
-          <article class="board-item">
+          <article class="card experiment">
             <img class="experiment-icon" src="icons/marketplace.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
               <h3>GCC marketplace</h3>
               <p>A marketplace for Global Capability Centres where employees are verified before they take part.</p>
+            </div>
+          </article>
+          <article class="card experiment">
+            <img class="experiment-icon" src="icons/yaku.svg" alt="" width="48" height="48" />
+            <div>
+              <div class="meta"><span class="pill">Planned</span></div>
+              <h3>Yaku</h3>
+              <p>
+                An embedded assistant in the style of Yak. People say what they want, and it completes the action inside
+                the product.
+              </p>
+            </div>
+          </article>
+          <article class="card experiment">
+            <img class="experiment-icon" src="icons/reels.svg" alt="" width="48" height="48" />
+            <div>
+              <div class="meta"><span class="pill">Planned</span></div>
+              <h3>Reel inbox</h3>
+              <p>Send a reel in, then search what you saved — the same job JustDM does.</p>
+            </div>
+          </article>
+          <article class="card experiment">
+            <img class="experiment-icon" src="icons/monitor.svg" alt="" width="48" height="48" />
+            <div>
+              <div class="meta"><span class="pill">Planned</span></div>
+              <h3>Competition monitor</h3>
+              <p>A tool that watches competitors and surfaces what changed.</p>
             </div>
           </article>
         </div>
