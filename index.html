@@ -3,541 +3,251 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Meraxis Labs — Building the next generation of intelligent apps.</title>
+    <title>Meraxis Labs — Experiment. Validate. Build.</title>
+    <meta
+      name="description"
+      content="Meraxis Labs is an independent startup experimentation lab. We identify problems, validate ideas, build intelligent products, and document the journey."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bg: #0B0F19;
-        --card-bg: #111827;
-        --primary: #6D5EF3;
-        --primary-glow: rgba(109, 94, 243, 0.35);
-        --secondary: #22D3EE;
-        --secondary-glow: rgba(34, 211, 238, 0.25);
-        --text: #E6EDF3;
-        --text-muted: #8B949E;
-        --border: rgba(255, 255, 255, 0.06);
-        --glass: rgba(17, 24, 39, 0.6);
-        --glass-border: rgba(255, 255, 255, 0.08);
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        min-height: 100vh;
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: var(--text);
-        background: var(--bg);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
-      }
-
-      /* Cosmic background */
-      .cosmic-bg {
-        position: fixed;
-        inset: 0;
-        z-index: -1;
-        background:
-          radial-gradient(ellipse 80% 50% at 50% -20%, rgba(109, 94, 243, 0.15), transparent 50%),
-          radial-gradient(ellipse 60% 40% at 100% 50%, rgba(34, 211, 238, 0.08), transparent 45%),
-          radial-gradient(ellipse 50% 30% at 0% 80%, rgba(109, 94, 243, 0.06), transparent 45%),
-          var(--bg);
-        pointer-events: none;
-      }
-
-      .cosmic-bg::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
-        background-size: 48px 48px;
-        opacity: 0.5;
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-
-      /* Nav */
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        padding: 20px 0;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        background: rgba(11, 15, 25, 0.7);
-        border-bottom: 1px solid var(--border);
-      }
-
-      nav .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        font-weight: 700;
-        font-size: 1.25rem;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .logo:hover {
-        color: var(--primary);
-      }
-
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-      }
-
-      .nav-links a {
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--text-muted);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--text);
-      }
-
-      @media (max-width: 640px) {
-        .nav-links {
-          display: none;
-        }
-      }
-
-      /* Hero */
-      .hero {
-        padding: 120px 0 100px;
-        text-align: center;
-      }
-
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 14px;
-        margin-bottom: 28px;
-        font-size: 0.75rem;
-        font-weight: 500;
-        color: var(--secondary);
-        background: rgba(34, 211, 238, 0.08);
-        border: 1px solid rgba(34, 211, 238, 0.2);
-        border-radius: 999px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        animation: fadeUp 0.6s ease-out;
-      }
-
-      .hero-badge::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--secondary);
-        box-shadow: 0 0 12px var(--secondary-glow);
-      }
-
-      .hero h1 {
-        font-size: clamp(2.75rem, 6vw, 4rem);
-        font-weight: 700;
-        letter-spacing: -0.04em;
-        line-height: 1.1;
-        margin-bottom: 24px;
-        background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        animation: fadeUp 0.6s ease-out 0.1s both;
-      }
-
-      .hero h1 .accent {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .hero-tagline {
-        font-size: clamp(1.125rem, 2vw, 1.35rem);
-        font-weight: 400;
-        color: var(--text-muted);
-        max-width: 560px;
-        margin: 0 auto 48px;
-        line-height: 1.6;
-        animation: fadeUp 0.6s ease-out 0.2s both;
-      }
-
-      .hero-cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 14px 28px;
-        font-size: 0.9375rem;
-        font-weight: 600;
-        font-family: inherit;
-        color: #fff;
-        background: linear-gradient(135deg, var(--primary) 0%, #5B4EE0 100%);
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        box-shadow: 0 0 40px var(--primary-glow);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        animation: fadeUp 0.6s ease-out 0.3s both;
-      }
-
-      .hero-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 0 56px var(--primary-glow);
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(16px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* App cards */
-      .apps {
-        padding: 80px 0 100px;
-      }
-
-      .section-label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--primary);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-        text-align: center;
-      }
-
-      .section-title {
-        font-size: clamp(1.75rem, 3vw, 2.25rem);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        color: var(--text);
-        text-align: center;
-        margin-bottom: 56px;
-        max-width: 520px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .app-cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-      }
-
-      @media (max-width: 900px) {
-        .app-cards {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .app-card {
-        position: relative;
-        padding: 32px 28px;
-        background: var(--glass);
-        border: 1px solid var(--glass-border);
-        border-radius: 16px;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        overflow: hidden;
-        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      }
-
-      .app-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
-        opacity: 0;
-        transition: opacity 0.25s ease;
-      }
-
-      .app-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(109, 94, 243, 0.25);
-        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(109, 94, 243, 0.1);
-      }
-
-      .app-card:hover::before {
-        opacity: 1;
-      }
-
-      .app-card-icon {
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-        border-radius: 12px;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--primary);
-        background: rgba(109, 94, 243, 0.12);
-        border: 1px solid rgba(109, 94, 243, 0.2);
-      }
-
-      .app-card:nth-child(2) .app-card-icon {
-        color: var(--secondary);
-        background: rgba(34, 211, 238, 0.12);
-        border-color: rgba(34, 211, 238, 0.2);
-      }
-
-      .app-card:nth-child(3) .app-card-icon {
-        color: #A78BFA;
-        background: rgba(167, 139, 250, 0.12);
-        border-color: rgba(167, 139, 250, 0.2);
-      }
-
-      .app-card h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        margin-bottom: 8px;
-        color: var(--text);
-      }
-
-      .app-card p {
-        font-size: 0.9375rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-      }
-
-      /* Philosophy */
-      .philosophy {
-        padding: 100px 0 120px;
-      }
-
-      .philosophy-inner {
-        max-width: 720px;
-        margin: 0 auto;
-      }
-
-      .philosophy-card {
-        padding: 48px 40px;
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .philosophy-card::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle at 30% 30%, rgba(109, 94, 243, 0.06) 0%, transparent 40%);
-        pointer-events: none;
-      }
-
-      .philosophy-card blockquote {
-        position: relative;
-        font-size: clamp(1.25rem, 2vw, 1.5rem);
-        font-weight: 500;
-        line-height: 1.65;
-        color: var(--text);
-        letter-spacing: -0.02em;
-      }
-
-      .philosophy-card blockquote::before {
-        content: "\201C";
-        position: absolute;
-        top: -8px;
-        left: 0;
-        font-size: 4rem;
-        font-family: Georgia, serif;
-        color: var(--primary);
-        opacity: 0.25;
-      }
-
-      .philosophy-card cite {
-        display: block;
-        margin-top: 24px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--text-muted);
-        font-style: normal;
-      }
-
-      .philosophy-card cite span {
-        color: var(--primary);
-      }
-
-      /* Footer */
-      footer {
-        padding: 48px 0 32px;
-        border-top: 1px solid var(--border);
-      }
-
-      .footer-inner {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-
-      .footer-logo {
-        font-weight: 700;
-        font-size: 1rem;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .footer-logo:hover {
-        color: var(--primary);
-      }
-
-      .footer-links {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-      }
-
-      .footer-links a {
-        font-size: 0.875rem;
-        color: var(--text-muted);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .footer-links a:hover {
-        color: var(--text);
-      }
-
-      .footer-copy {
-        font-size: 0.8125rem;
-        color: var(--text-muted);
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="cosmic-bg" aria-hidden="true"></div>
-
     <nav>
-      <div class="container">
-        <a href="#" class="logo">Meraxis Labs</a>
+      <div class="container nav-bar">
+        <a href="index.html" class="logo">Meraxis <span>Labs</span></a>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
         <div class="nav-links">
-          <a href="#products">Products</a>
-          <a href="#philosophy">Philosophy</a>
-          <a href="#contact">Contact</a>
+          <div class="dropdown">
+            <button class="menu-btn" type="button" aria-expanded="false">Lab</button>
+            <div class="dropdown-panel">
+              <a href="experiments.html">Experiments</a>
+              <a href="products.html">Products</a>
+              <a href="case-studies.html">Case Studies</a>
+              <a href="methodology.html">Methodology</a>
+              <a href="problems.html">Problem Board</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="menu-btn" type="button" aria-expanded="false">Knowledge</button>
+            <div class="dropdown-panel">
+              <a href="research.html">Research</a>
+              <a href="journal.html">Journal</a>
+              <a href="writing.html">Blog</a>
+              <a href="events.html">Events</a>
+              <a href="press.html">Press</a>
+            </div>
+          </div>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
         </div>
       </div>
     </nav>
 
     <header class="hero">
       <div class="container">
-        <div class="hero-badge">Next-gen intelligent apps</div>
-        <h1><span class="accent">Meraxis Labs</span></h1>
-        <p class="hero-tagline">
-          Building the next generation of intelligent apps.
+        <p class="kicker">Meraxis Labs</p>
+        <h1>
+          <span class="line">Experiment.</span>
+          <span class="line">Validate.</span>
+          <span class="line">Build.</span>
+        </h1>
+        <p class="lede">
+          An independent startup experimentation lab. Meraxis Labs identifies problems, validates ideas, builds intelligent products, and documents the entire journey.
         </p>
-        <a href="#products" class="hero-cta">
-          Explore products
-          <span aria-hidden="true">→</span>
-        </a>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="experiments.html">View experiments →</a>
+          <a class="btn btn-ghost" href="methodology.html">How it works</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>5</strong><span>Experiments</span></div>
+          <div class="stat"><strong>3</strong><span>Live products</span></div>
+          <div class="stat"><strong>4</strong><span>Research articles</span></div>
+        </div>
       </div>
     </header>
 
-    <section class="apps" id="products">
+    <section class="section">
       <div class="container">
-        <p class="section-label">Products</p>
-        <h2 class="section-title">One stack. Three products. Built for scale.</h2>
-        <div class="app-cards">
-          <article class="app-card">
-            <div class="app-card-icon">P</div>
+        <p class="section-label">Areas of exploration</p>
+        <h2>Where Meraxis Labs is looking</h2>
+        <div class="grid-4" style="margin-top: 28px">
+          <article class="card">
+            <h3>Payments</h3>
+            <p>Subscriptions, usage billing, and the checkout primitives product teams keep rebuilding.</p>
+          </article>
+          <article class="card">
+            <h3>Trust</h3>
+            <p>Document and identity verification, fraud signals, and compliance that does not stall onboarding.</p>
+          </article>
+          <article class="card">
+            <h3>Infrastructure</h3>
+            <p>Secrets, credentials, and access audit for teams that should not run their own vault.</p>
+          </article>
+          <article class="card">
+            <h3>Applied intelligence</h3>
+            <p>AI-assisted build cycles and operator tools that shorten the path from problem to product.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Currently live</p>
+            <h2>Products with real users</h2>
+          </div>
+          <a class="more" href="products.html">All products →</a>
+        </div>
+        <div class="grid-3">
+          <a class="card" href="pay.html">
+            <div class="meta"><span class="pill live">Live</span><span>Payments</span></div>
             <h3>Meraxis Pay</h3>
-            <p>
-              Frictionless payments and billing infrastructure for modern teams. Ship subscriptions and one-time charges with a single API.
-            </p>
-          </article>
-          <article class="app-card">
-            <div class="app-card-icon">S</div>
+            <p>Frictionless payments and billing for modern teams. Subscriptions and one-time charges through a single API.</p>
+          </a>
+          <a class="card" href="scan.html">
+            <div class="meta"><span class="pill live">Live</span><span>Trust</span></div>
             <h3>Meraxis Scan</h3>
-            <p>
-              Intelligent document and identity verification. Reduce fraud and automate compliance with AI-powered scanning.
-            </p>
-          </article>
-          <article class="app-card">
-            <div class="app-card-icon">V</div>
+            <p>Intelligent document and identity verification. Reduce fraud and automate compliance with AI-powered scanning.</p>
+          </a>
+          <a class="card" href="vault.html">
+            <div class="meta"><span class="pill live">Live</span><span>Infrastructure</span></div>
             <h3>Meraxis Vault</h3>
-            <p>
-              Developer-first secrets and credential management. Encrypt, rotate, and audit access without the ops overhead.
-            </p>
-          </article>
+            <p>Developer-first secrets and credential management. Encrypt, rotate, and audit access without the ops overhead.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="philosophy" id="philosophy">
+    <section class="section" style="padding-top: 0">
       <div class="container">
-        <p class="section-label">Philosophy</p>
-        <h2 class="section-title">We believe in building tools that get out of the way.</h2>
-        <div class="philosophy-inner">
-          <div class="philosophy-card">
-            <blockquote>
-              Great software should feel inevitable—simple on the surface, powerful under the hood. We're building the primitives that let developers ship faster and sleep better.
-            </blockquote>
-            <cite><span>Meraxis Labs</span> — Building for the next decade.</cite>
+        <div class="section-head">
+          <div>
+            <p class="section-label">Research</p>
+            <h2>Latest from the lab</h2>
+          </div>
+          <a class="more" href="research.html">All research →</a>
+        </div>
+        <div class="grid-3">
+          <a class="card" href="research-build.html">
+            <div class="meta"><span>Applied intelligence</span><span>2026-09-12</span></div>
+            <h3>The build phase is no longer the bottleneck</h3>
+            <p>How the lab uses AI-assisted development to compress implementation, and where human judgement still decides what ships.</p>
+          </a>
+          <a class="card" href="research-billing.html">
+            <div class="meta"><span>Payments</span><span>2026-08-21</span></div>
+            <h3>Billing is still a tax on product teams</h3>
+            <p>Why subscriptions, usage meters, and invoices keep getting rebuilt — and what a smaller primitive set would change.</p>
+          </a>
+          <a class="card" href="research-verification.html">
+            <div class="meta"><span>Trust</span><span>2026-07-30</span></div>
+            <h3>Verification fails at the document edge</h3>
+            <p>Identity checks break on blurry uploads, mismatched names, and policies that were never written down. Notes from the Scan pilots.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-label">Journal</p>
+            <h2>Recent activity</h2>
+          </div>
+          <a class="more" href="journal.html">Full journal →</a>
+        </div>
+        <div class="stack">
+          <a class="entry" href="journal.html#pay-usage">
+            <time datetime="2026-09-18">2026-09-18</time>
+            <div>
+              <h3>Pay ships usage-based billing</h3>
+              <p>Design partners can now meter API calls and settle them on the same subscription invoice. Early signal: teams want one ledger, not a second billing vendor.</p>
+            </div>
+          </a>
+          <a class="entry" href="journal.html#scan-pilot">
+            <time datetime="2026-09-04">2026-09-04</time>
+            <div>
+              <h3>Scan completes a design-partner pilot</h3>
+              <p>A fintech onboarding flow ran Scan on live document uploads for three weeks. Pass rate improved once we scored image quality before extraction, not after.</p>
+            </div>
+          </a>
+          <a class="entry" href="journal.html#vault-audit">
+            <time datetime="2026-08-19">2026-08-19</time>
+            <div>
+              <h3>Vault audit log goes live</h3>
+              <p>Every read, rotation, and denied access is now queryable. The request that kept coming back was not more encryption. It was proof of who touched a secret.</p>
+            </div>
+          </a>
+          <a class="entry" href="journal.html#kill-criteria">
+            <time datetime="2026-08-02">2026-08-02</time>
+            <div>
+              <h3>Published the lab’s kill-criteria note</h3>
+              <p>Every experiment now writes the archive threshold before build starts. The point is to learn quickly, including when the honest outcome is to stop.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="band">
+          <h2>Explore the lab</h2>
+          <p>Meraxis Labs is running experiments, publishing research, and looking for collaborators across payments, trust, and developer infrastructure.</p>
+          <div class="cta-row" style="margin-bottom: 0">
+            <a class="btn btn-primary" href="experiments.html">Experiments</a>
+            <a class="btn btn-ghost" href="research.html">Research</a>
+            <a class="btn btn-ghost" href="contact.html">Get in touch</a>
           </div>
         </div>
       </div>
     </section>
 
-    <footer id="contact">
+    <footer>
       <div class="container">
-        <div class="footer-inner">
-          <a href="#" class="footer-logo">Meraxis Labs</a>
-          <div class="footer-links">
-            <a href="#">Docs</a>
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
-            <a href="#">Contact</a>
+        <div class="footer-grid">
+          <div>
+            <h4>Lab</h4>
+            <a href="experiments.html">Experiments</a>
+            <a href="products.html">Products</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="problems.html">Problem Board</a>
           </div>
-          <span class="footer-copy">© 2025 Meraxis Labs. All rights reserved.</span>
+          <div>
+            <h4>Knowledge</h4>
+            <a href="research.html">Research</a>
+            <a href="journal.html">Journal</a>
+            <a href="writing.html">Blog</a>
+            <a href="events.html">Events</a>
+            <a href="press.html">Press</a>
+          </div>
+          <div>
+            <h4>Connect</h4>
+            <a href="partnerships.html">Partnerships</a>
+            <a href="investors.html">Investors</a>
+            <a href="universities.html">Universities</a>
+            <a href="testimonials.html">Testimonials</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+            <a href="faq.html">FAQ</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Meraxis Labs</span>
+          <span>Independent startup experimentation lab</span>
         </div>
       </div>
     </footer>
+    <script src="site.js"></script>
   </body>
 </html>
