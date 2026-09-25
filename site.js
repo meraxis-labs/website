@@ -10,9 +10,13 @@
 
   var path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   if (path === "" || path === "/") path = "index.html";
+  var underExperiments = /\/experiments\//i.test(location.pathname);
   document.querySelectorAll(".nav-links a").forEach(function (a) {
     var href = (a.getAttribute("href") || "").toLowerCase();
-    if (href === path) {
+    var hrefFile = href.split("/").pop();
+    var active =
+      hrefFile === path || (underExperiments && hrefFile === "experiments.html");
+    if (active) {
       a.setAttribute("aria-current", "page");
       a.classList.add("is-active");
     }
