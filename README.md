@@ -2,7 +2,7 @@
 
 Landing site for [www.meraxislabs.com](https://www.meraxislabs.com).
 
-Static HTML/CSS/JS. Contact form posts to [FormSubmit](https://formsubmit.co) → `hello@meraxislabs.com` (activate once via the confirmation email FormSubmit sends).
+Static HTML/CSS/JS. Contact currently uses `mailto:hello@meraxislabs.com` (form opens the user’s email app). A custom backend can replace this later.
 
 ## Search Console
 
