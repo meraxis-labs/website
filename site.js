@@ -43,7 +43,7 @@
     });
   });
 
-  var CONTACT_EMAIL = "hello@getmeraxis.com";
+  var CONTACT_EMAIL = "hello@meraxislabs.com";
   var form = document.querySelector("form[data-contact]");
   if (form) {
     form.addEventListener("submit", function (event) {

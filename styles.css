@@ -565,6 +565,21 @@ footer {
   margin-top: 6px;
 }
 
+.about-stats {
+  margin: 24px 0 8px;
+  padding-top: 0;
+}
+
+.prose .cta-row {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.prose strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -633,6 +648,12 @@ footer {
   margin-top: 10px;
   font-size: 0.875rem;
   color: var(--text-muted);
+}
+
+.experiment-lead {
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .experiment-note a {
