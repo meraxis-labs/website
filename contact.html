@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contact — Meraxis Labs</title>
+    <meta
+      name="description"
+      content="Contact Meraxis Labs about experiments on the board. Email hello@getmeraxis.com."
+    />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,12 +37,19 @@
           <h1>Contact</h1>
           <p>Write if you want to talk about one of the experiments on the board.</p>
         </header>
+        <p class="contact-direct">
+          Email
+          <a href="mailto:hello@getmeraxis.com">hello@getmeraxis.com</a>
+        </p>
         <form class="form" data-contact>
-          <label>Name<input name="name" required /></label>
-          <label>Email<input name="email" type="email" required /></label>
+          <label>Name<input name="name" autocomplete="name" required /></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required /></label>
           <label>Message<textarea name="message" required></textarea></label>
-          <button class="btn btn-primary" type="submit">Send</button>
-          <p class="note" hidden>Thanks. This form does not send email yet — write to hello@getmeraxis.com.</p>
+          <button class="btn btn-primary" type="submit">Open in email app</button>
+          <p class="note" hidden>
+            If your email app did not open, write to
+            <a href="mailto:hello@getmeraxis.com">hello@getmeraxis.com</a>.
+          </p>
         </form>
       </div>
     </main>
