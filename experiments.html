@@ -8,21 +8,38 @@
       name="description"
       content="Seven Meraxis Labs experiments. TagBack is live. Credit card rewards, SMS OTP, GCC marketplace, Yaku, Reel inbox, and Competition monitor are planned."
     />
+    <link rel="canonical" href="https://www.meraxislabs.com/experiments.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.meraxislabs.com/experiments.html" />
+    <meta property="og:title" content="Experiments — Meraxis Labs" />
+    <meta
+      property="og:description"
+      content="Seven Meraxis Labs experiments. TagBack is live. Six more are planned."
+    />
+    <meta property="og:image" content="https://www.meraxislabs.com/logo.png" />
+    <meta name="twitter:card" content="summary" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="cosmic-bg" aria-hidden="true"></div>
+    <div class="site-bg" aria-hidden="true"></div>
     <nav>
       <div class="container nav-bar">
         <a href="index.html" class="logo"><img src="logo.png" alt="Meraxis Labs" /></a>
-        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+            <path fill="currentColor" d="M2 4h14v1.5H2zm0 4.25h14v1.5H2zm0 4.25h14V14H2z" />
+          </svg>
+        </button>
         <div class="nav-links">
           <a href="experiments.html">Experiments</a>
           <a href="about.html">About</a>
@@ -37,21 +54,35 @@
           <h1>Experiments</h1>
           <p>Seven experiments. TagBack is live. The other six are still planned.</p>
         </header>
-        <h2 style="margin-bottom: 16px">Live product</h2>
-        <div class="list">
-          <article class="card experiment">
-            <img class="experiment-icon" src="icons/tagback.svg" alt="" width="48" height="48" />
-            <div>
-              <div class="meta"><span class="pill live">Live</span></div>
-              <h3><a href="https://tagback.getmeraxis.com/" target="_blank" rel="noopener noreferrer">TagBack</a></h3>
-              <p class="experiment-lead">QR lost &amp; found, privately.</p>
-              <p>Turn any item into a smart, private “return to owner” tag so honest finders can reach you—without ever revealing your personal contact details.</p>
+
+        <p class="section-label">Live product</p>
+        <article class="feature-live">
+          <div class="feature-live-copy">
+            <div class="meta"><span class="pill live">Live</span></div>
+            <h2>
+              <a href="https://tagback.getmeraxis.com/" target="_blank" rel="noopener noreferrer">TagBack</a>
+            </h2>
+            <p class="experiment-lead">QR lost &amp; found, privately.</p>
+            <p>
+              Turn any item into a smart, private “return to owner” tag so honest finders can reach you—without ever
+              revealing your personal contact details.
+            </p>
+            <div class="cta-row">
+              <a
+                class="btn btn-primary"
+                href="https://tagback.getmeraxis.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open TagBack →</a
+              >
             </div>
-          </article>
-        </div>
-        <h2 style="margin: 40px 0 16px">Future experiments</h2>
-        <div class="list">
-          <article class="card experiment">
+          </div>
+        </article>
+
+        <p class="section-label" style="margin-top: 48px">On the board</p>
+        <h2 style="margin-bottom: 8px">Future experiments</h2>
+        <div class="board-list">
+          <article class="board-item">
             <img class="experiment-icon" src="icons/rewards.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -59,7 +90,7 @@
               <p>A rewards programme built around credit card spend.</p>
             </div>
           </article>
-          <article class="card experiment">
+          <article class="board-item">
             <img class="experiment-icon" src="icons/otp.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -67,7 +98,7 @@
               <p>A gateway for sending and verifying one-time passwords over SMS.</p>
             </div>
           </article>
-          <article class="card experiment">
+          <article class="board-item">
             <img class="experiment-icon" src="icons/marketplace.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -75,15 +106,18 @@
               <p>A marketplace for Global Capability Centres where employees are verified before they take part.</p>
             </div>
           </article>
-          <article class="card experiment">
+          <article class="board-item">
             <img class="experiment-icon" src="icons/yaku.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
               <h3>Yaku</h3>
-              <p>An embedded assistant in the style of Yak. People say what they want, and it completes the action inside the product.</p>
+              <p>
+                An embedded assistant in the style of Yak. People say what they want, and it completes the action inside
+                the product.
+              </p>
             </div>
           </article>
-          <article class="card experiment">
+          <article class="board-item">
             <img class="experiment-icon" src="icons/reels.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -91,7 +125,7 @@
               <p>Send a reel in, then search what you saved — the same job JustDM does.</p>
             </div>
           </article>
-          <article class="card experiment">
+          <article class="board-item">
             <img class="experiment-icon" src="icons/monitor.svg" alt="" width="48" height="48" />
             <div>
               <div class="meta"><span class="pill">Planned</span></div>
@@ -106,7 +140,10 @@
       <div class="container">
         <div class="footer-bottom">
           <span>© 2026 Meraxis Labs</span>
-          <span><a href="experiments.html">Experiments</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></span>
+          <span
+            ><a href="experiments.html">Experiments</a> · <a href="about.html">About</a> ·
+            <a href="contact.html">Contact</a></span
+          >
         </div>
       </div>
     </footer>
