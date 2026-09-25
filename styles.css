@@ -10,8 +10,8 @@
   --surface: rgba(14, 21, 32, 0.72);
   --surface-border: rgba(148, 185, 255, 0.14);
   --live: #5ddea5;
-  --font-display: "Syne", sans-serif;
-  --font-body: "Manrope", sans-serif;
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
