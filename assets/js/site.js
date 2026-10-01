@@ -8,14 +8,17 @@
     });
   }
 
-  var path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  if (path === "" || path === "/") path = "index.html";
-  var underExperiments = /\/experiments\//i.test(location.pathname);
+  function normalize(path) {
+    var value = (path || "/").split("?")[0].split("#")[0].toLowerCase();
+    value = value.replace(/\/index\.html$/, "");
+    value = value.replace(/\/$/, "");
+    return value || "/";
+  }
+
+  var current = normalize(location.pathname);
   document.querySelectorAll(".nav-links a").forEach(function (a) {
-    var href = (a.getAttribute("href") || "").toLowerCase();
-    var hrefFile = href.split("/").pop();
-    var active =
-      hrefFile === path || (underExperiments && hrefFile === "experiments.html");
+    var href = normalize(a.getAttribute("href") || "");
+    var active = current === href || (href !== "/" && current.indexOf(href + "/") === 0);
     if (active) {
       a.setAttribute("aria-current", "page");
       a.classList.add("is-active");
