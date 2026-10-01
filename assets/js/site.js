@@ -5,6 +5,13 @@
     toggle.addEventListener("click", function () {
       var open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (!open) {
+        document.querySelectorAll(".nav-dropdown.is-open").forEach(function (dropdown) {
+          dropdown.classList.remove("is-open");
+          var dropdownToggle = dropdown.querySelector(".nav-dropdown-toggle");
+          if (dropdownToggle) dropdownToggle.setAttribute("aria-expanded", "false");
+        });
+      }
     });
   }
 
@@ -23,6 +30,53 @@
       a.setAttribute("aria-current", "page");
       a.classList.add("is-active");
     }
+  });
+
+  document.querySelectorAll(".nav-dropdown").forEach(function (dropdown) {
+    var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+    var menu = dropdown.querySelector(".nav-dropdown-menu");
+    if (!toggle || !menu) return;
+
+    if (dropdown.querySelector("a.is-active")) {
+      toggle.classList.add("is-active");
+    }
+
+    dropdown.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      var open = !dropdown.classList.contains("is-open");
+      document.querySelectorAll(".nav-dropdown.is-open").forEach(function (other) {
+        if (other === dropdown) return;
+        other.classList.remove("is-open");
+        var otherToggle = other.querySelector(".nav-dropdown-toggle");
+        if (otherToggle) otherToggle.setAttribute("aria-expanded", "false");
+      });
+      dropdown.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  document.addEventListener("click", function () {
+    document.querySelectorAll(".nav-dropdown.is-open").forEach(function (dropdown) {
+      dropdown.classList.remove("is-open");
+      var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll(".nav-dropdown.is-open").forEach(function (dropdown) {
+      dropdown.classList.remove("is-open");
+      var toggle = dropdown.querySelector(".nav-dropdown-toggle");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.focus();
+      }
+    });
   });
 
   var CONTACT_EMAIL = "hello@meraxislabs.com";
