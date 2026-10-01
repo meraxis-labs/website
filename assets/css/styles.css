@@ -560,6 +560,134 @@ a.card h3 {
   padding-top: 0;
 }
 
+.team-intro {
+  margin-bottom: 8px;
+}
+
+.team-intro a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.team-intro a:hover {
+  color: var(--text);
+}
+
+.team-roster {
+  margin-top: 48px;
+  max-width: 740px;
+}
+
+.team-roster-heading {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.team-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.team-member {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
+  align-items: start;
+  cursor: default;
+}
+
+.team-member:hover {
+  transform: none;
+}
+
+.team-member-photo {
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 160px;
+  border-radius: 16px;
+  border: 2px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(17, 24, 39, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+}
+
+.team-member-photo-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.team-member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+.team-member-body .meta {
+  margin-bottom: 8px;
+}
+
+.team-member-name {
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.team-member-bio {
+  max-width: none;
+}
+
+.team-member-bio p {
+  font-size: 0.95rem;
+}
+
+.team-member-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 0;
+}
+
+.team-member-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.team-member-link:hover {
+  color: var(--text);
+}
+
+.team-member-link-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.team-outro {
+  margin-top: 40px;
+}
+
+.team-outro .cta-row {
+  margin-top: 0;
+}
+
 .prose .cta-row {
   margin-top: 20px;
   margin-bottom: 0;
@@ -742,6 +870,15 @@ a.card h3 {
   .experiment-hero {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .team-member {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-member-photo {
+    max-width: 200px;
   }
 
   .hero {
